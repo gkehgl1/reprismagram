@@ -1,0 +1,17 @@
+{
+  "name": "reprismagram",
+  "version": "1.0.0",
+  "description": "instagram clone coding",
+  "main": "index.js",
+  "repository": "https://github.com/gkehgl1/reprismagram.git",
+  "author": "gkehgl1 <gkehgl2@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-node": "^0.0.1-security",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
