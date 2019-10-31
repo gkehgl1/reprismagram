@@ -1,6 +1,7 @@
 import {adjectives, nouns } from "./words";
 import nodemailer from "nodemailer";
 import sgTransport from "nodemailer-sendgrid-transport"
+import jwt from "jsonwebtoken"
 
 export const generateSecret = () => {
   const randomNumber = Math.floor(Math.random() * adjectives.length);
@@ -23,7 +24,9 @@ export const sendSecretMail = (address, secret) => {
     from: "gkehgl1@gmail.com",
     to: address,
     subject: "LoginSecret for 프리즈마그램",
-    html: `hello! Your LoginSecret is ${secret}.<br/>Copy paste on the app/website to log in `
+    html: `hello! Your LoginSecret is <b>${secret}</b>.<br/>Copy paste on the app/website to log in `
   };
   return sendMail(email);
-}
+};
+
+export const generateToken = (id) => jwt.sign({id}, process.env.JWT_SECRET);
