@@ -9,12 +9,13 @@ export default {
           email,
           firstName,
           lastName,
-          bio 
+          bio,
+          avatar
       } = args;      
       const { user } = request;
       return prisma.updateUser({
         where:{id:user.id}, 
-        data:{username,email, firstName, lastName, bio}
+        data:{username,email, firstName, lastName, bio, avatar}
       });
     }    
  }
